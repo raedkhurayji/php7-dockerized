@@ -14,7 +14,6 @@ RUN wget https://nginx.org/keys/nginx_signing.key -O - | apt-key add -
 RUN apt-get update && apt-get install -my \
   supervisor \
   curl \
-  wget \
   php7.0-curl \
   php7.0-fpm \
   php7.0-mysql \
@@ -23,7 +22,7 @@ RUN apt-get update && apt-get install -my \
   php7.0-xdebug \
   php-apc
 
-# Ensure that PHP5 FPM is run as root.
+# Ensure that PHP7 FPM is run as root.
 RUN sed -i "s/user = www-data/user = root/" /etc/php/7.0/fpm/pool.d/www.conf
 RUN sed -i "s/group = www-data/group = root/" /etc/php/7.0/fpm/pool.d/www.conf
 
