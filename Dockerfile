@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -my \
   php7.0-mcrypt \
   php7.0-sqlite \
   php7.0-xdebug \
+  php7.0-mbstring \
   php-apc
 
 # Ensure that PHP7 FPM is run as root.
