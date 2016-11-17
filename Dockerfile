@@ -34,3 +34,4 @@ RUN sed -i '/.*xdebug.so$/s/^/;/' /etc/php/7.0/mods-available/xdebug.ini
 COPY conf/nginx.conf /etc/nginx/
 COPY conf/supervisord.conf /etc/supervisor/conf.d/
 COPY conf/php.ini /etc/php/7.0/fpm/conf.d/40-custom.ini
+COPY conf/my.cnf /etc/mysql/my.cnf
