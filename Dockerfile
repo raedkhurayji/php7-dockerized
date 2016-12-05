@@ -7,6 +7,7 @@ RUN rm -f /etc/nginx/conf.d/*
 RUN apt-get update && apt-get install -my wget
 RUN sh -c "echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list"
 RUN sh -c "echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list"
+RUN apt-key list | grep "expired:"
 RUN wget https://www.dotdeb.org/dotdeb.gpg -O - | apt-key add -
 RUN wget https://nginx.org/keys/nginx_signing.key -O - | apt-key add -
 
